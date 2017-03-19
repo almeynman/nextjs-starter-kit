@@ -2,7 +2,7 @@
   "name": "web",
   "version": "0.0.0",
   "scripts": {
-    "dev": "nodemon lib/server.js --exec babel-node",
+    "dev": "nodemon lib/server.js --exec babel-node --watch lib",
     "build": "next build && babel lib -d dist",
     "start": "node dist/server.js"
   },
