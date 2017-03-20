@@ -2,7 +2,7 @@
   "name": "web",
   "version": "0.0.0",
   "scripts": {
-    "test": "mocha '**/__tests__/*' -R spec --compilers js:babel-register",
+    "test": "NODE_ENV=test mocha '**/__tests__/*' -R spec --compilers js:babel-register",
     "dev": "nodemon lib/server.js --exec babel-node --watch lib --ignore __tests__",
     "build": "next build && babel lib -d dist",
     "start": "node dist/server.js"
