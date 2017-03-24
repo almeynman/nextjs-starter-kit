@@ -1,3 +1,4 @@
+--require testSetup.js
 ./lib/**/*.test.js
 ./pages/**/*.test.js
 ./components/**/*.test.js
