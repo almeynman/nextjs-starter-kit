@@ -2,7 +2,7 @@
 
 import { expect } from 'chai';
 import { render } from 'enzyme';
-import Layout from '../Layout';
+import Layout from './Layout';
 
 describe('Layout', () => {
   it('renders children correctly', () => {
