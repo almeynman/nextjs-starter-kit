@@ -1,7 +1,9 @@
 import { PropTypes } from 'react';
+import Header from './Header';
 
 const Layout = ({ children }) => (
   <div>
+    <Header />
     {children}
     <style jsx global>{`
       html {

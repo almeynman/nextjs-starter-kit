@@ -1,6 +1,6 @@
 import { Component, PropTypes } from 'react';
 import 'isomorphic-fetch';
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 
 export default class IndexPage extends Component {
   static propTypes = {
