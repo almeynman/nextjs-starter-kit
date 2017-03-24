@@ -10,6 +10,7 @@
   "dependencies": {
     "aphrodite": "^1.2.0",
     "babel-register": "^6.24.0",
+    "color": "^1.0.3",
     "express": "^4.15.2",
     "history": "^4.6.1",
     "isomorphic-fetch": "^2.2.1",
