@@ -1,4 +1,5 @@
 import { Component, PropTypes } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 import 'isomorphic-fetch';
 import Layout from '../components/Layout';
 
@@ -20,62 +21,39 @@ export default class IndexPage extends Component {
   render() {
     return (
       <Layout>
-        <div className="wrapper">
-          <div className="container">
+        <div className={css(styles.root)}>
+          <div className={css(styles.container)}>
             <h1>React.js News</h1>
             {this.props.news.map(item => (
-              <article key={item.link} className="newsItem">
-                <h1 className="newsTitle"><a href={item.link}>{item.title}</a></h1>
-                <div
-                  className="newsDesc"
-                  // eslint-disable-next-line react/no-danger
-                  dangerouslySetInnerHTML={{ __html: item.content }}
-                />
-              </article>
-            ))}
+               <article key={item.link} className={css(styles.newsItem)}>
+                 <h1 className={css(styles.newsTitle)}><a href={item.link}>{item.title}</a></h1>
+                 <div
+                     className="newsDesc"
+                     // eslint-disable-next-line react/no-danger
+                     dangerouslySetInnerHTML={{ __html: item.content }}
+                 />
+               </article>
+             ))}
           </div>
-          <style jsx>{`
-            .wrapper {
-              padding-left: 20px;
-              padding-right: 20px;
-            }
-          
-            .container {
-              margin: 0 auto;
-              padding: 0 0 40px;
-              max-width: var(--max-content-width);
-            }
-
-            .newsItem {
-              margin: 0 0 2rem;
-            }
-
-            .newsTitle {
-              font-size: 1.5rem;
-            }
-
-            .newsDesc {
-              h1,
-              h2,
-              h3,
-              h4,
-              h5,
-              h6 {
-                font-size: 1.125rem;
-              }
-
-              pre {
-                white-space: pre-wrap;
-                font-size: 0.875rem;
-              }
-
-              img {
-                max-width: 100%;
-              }
-            }
-          `}</style>
         </div>
       </Layout>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  root: {
+    paddingLeft: '20px',
+    paddingRight: '20px',
+  },
+  container: {
+    margin: '0 auto',
+    padding: '0 0 40px',
+  },
+  newsItem: {
+    margin: '0 0 2rem',
+  },
+  newsTitle: {
+    fontSize: '1.5rem',
+  },
+});
