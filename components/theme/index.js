@@ -20,4 +20,8 @@ export const screenSmMin = '768px';
 export const screenMdMin = '992px';
 export const screenLgMin = '1200px';
 
+/*
+ * Brand Colors
+ * ======================================================================== */
+
 export const brandColor = '#61dafb';
