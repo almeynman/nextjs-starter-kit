@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   bannerDesc: {
     padding: 0,
-    color: Color('rgba(255, 255, 255, 0.5)').hex(),
+    color: 'rgba(255, 255, 255, 0.5)',
     fontSize: '1.25em',
     margin: 0,
   },
