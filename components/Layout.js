@@ -2,15 +2,16 @@ import { PropTypes } from 'react';
 import Head from 'next/head';
 import { css, withStyles } from '../lib/withStyles';
 import Header from './Header';
-import stylesheet from '../static/index.css';
+import stylesheet from './Layout.css';
 
 const Layout = ({ children, styles, title }) => (
   <div {...css(styles.root)}>
     <Head>
       <title>{title}</title>
-      <meta charSet='utf-8' />
-      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />{
+      // eslint-disable-next-line react/no-danger
+      }<style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     </Head>
     <Header />
     {children}

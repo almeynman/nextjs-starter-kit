@@ -6,7 +6,7 @@ const isModifiedEvent = event =>
   !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 
 const Link = ({ to, children, onClick, ...props }) => {
-  const handleClick = event => {
+  const handleClick = (event) => {
     if (onClick) {
       onClick(event);
     }
