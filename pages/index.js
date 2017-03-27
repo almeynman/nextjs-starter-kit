@@ -1,5 +1,5 @@
 import { Component, PropTypes } from 'react';
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite/no-important';
 import 'isomorphic-fetch';
 import Layout from '../components/Layout';
 

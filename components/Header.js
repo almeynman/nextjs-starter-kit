@@ -1,4 +1,4 @@
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet, css } from 'aphrodite/no-important';
 import Color from 'color';
 import Link from './Link';
 import Navigation from './Navigation';
