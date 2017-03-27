@@ -1,5 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { StyleSheetServer } from 'aphrodite';
+import { fontFamilyBase } from '../lib/theme';
 
 export default class MyDocument extends Document {
   static async getInitialProps({ renderPage }) {
@@ -9,15 +10,15 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <html lang="en">
         <Head>
           <title>My page</title>
-          <style>{`
+          <style dangerouslySetInnerHTML={{ __html: `
             html {
               color: #222;
               font-weight: 100;
               font-size: 1em; /* ~16px; */
-              font-family: var(--font-family-base);
+              font-family: ${fontFamilyBase};
               line-height: 1.375; /* ~22px */
             }
 
@@ -194,7 +195,7 @@ export default class MyDocument extends Document {
             .newsDesc img {
               max-width: 100%;
             }
-          `}</style>
+          `}} />
           <style dangerouslySetInnerHTML={{ __html: this.props.css.content }} />
         </Head>
         <body>
