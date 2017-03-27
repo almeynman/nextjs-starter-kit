@@ -1,18 +1,23 @@
-import { StyleSheet, css } from 'aphrodite/no-important';
+import { PropTypes } from 'react';
+import { css, withStyles } from '../lib/withStyles';
 import Link from './Link';
 
-const Navigation = () => (
-  <div className={css(styles.root)} role="navigation">
-    <Link className={css(styles.link)} to="/about">About</Link>
-    <Link className={css(styles.link)} to="/contact">Contact</Link>
-    <span className={css(styles.spacer)}> | </span>
-    <Link className={css(styles.link)} to="/login">Log in</Link>
-    <span className={css(styles.spacer)}>or</span>
-    <Link className={css(styles.link, styles.highlight)} to="/register">Sign up</Link>
+const Navigation = ({ styles }) => (
+  <div {...css(styles.root)} role="navigation">
+    <Link {...css(styles.link)} to="/about">About</Link>
+    <Link {...css(styles.link)} to="/contact">Contact</Link>
+    <span {...css(styles.spacer)}> | </span>
+    <Link {...css(styles.link)} to="/login">Log in</Link>
+    <span {...css(styles.spacer)}>or</span>
+    <Link {...css(styles.link, styles.highlight)} to="/register">Sign up</Link>
   </div>
 );
 
-const styles = StyleSheet.create({
+Navigation.propTypes = {
+  styles: PropTypes.object.isRequired,
+};
+
+export default withStyles(() => ({
   root: {
     float: 'right',
     margin: '6px 0 0',
@@ -46,6 +51,4 @@ const styles = StyleSheet.create({
   spacer: {
     color: 'rgba(255, 255, 255, 0.3)',
   },
-});
-
-export default Navigation;
+}))(Navigation);

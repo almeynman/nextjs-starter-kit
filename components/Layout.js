@@ -1,8 +1,8 @@
 import { PropTypes } from 'react';
 import Head from 'next/head';
+import { css, withStyles } from '../lib/withStyles';
 import Header from './Header';
 import stylesheet from '../static/index.css';
-import { css, withStyles } from '../lib/withStyles';
 
 const Layout = ({ children, styles, title }) => (
   <div {...css(styles.root)}>
@@ -19,6 +19,7 @@ const Layout = ({ children, styles, title }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  styles: PropTypes.object.isRequired,
   title: PropTypes.string,
 };
 
@@ -26,12 +27,8 @@ Layout.defaultProps = {
   title: 'This is a default title',
 };
 
-Layout.propTypes = {
-  styles: PropTypes.object.isRequired,
-};
-
-export default withStyles(({ color }) => ({
+export default withStyles(({ fontFamilyBase }) => ({
   root: {
-    background: color.primary,
+    fontFamily: fontFamilyBase,
   },
 }))(Layout);

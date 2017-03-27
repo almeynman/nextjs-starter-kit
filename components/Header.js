@@ -1,26 +1,29 @@
-import { StyleSheet, css } from 'aphrodite/no-important';
-import Color from 'color';
+import { PropTypes } from 'react';
+import { css, withStyles } from '../lib/withStyles';
 import Link from './Link';
 import Navigation from './Navigation';
-import { brandColor, maxContentWidth } from '../lib/theme';
 
-export default () => (
-  <div className={css(styles.root)}>
-    <div className={css(styles.container)}>
+const Header = ({ styles }) => (
+  <div {...css(styles.root)}>
+    <div {...css(styles.container)}>
       <Navigation />
-      <Link className={css(styles.brand)} to="/">
+      <Link {...css(styles.brand)} to="/">
         <img src="/static/logo-small.png" srcSet="/static/logo-small@2x.png" width="38" height="38" alt="React" />
-        <span className={css(styles.brandTxt)}>Your Company</span>
+        <span {...css(styles.brandTxt)}>Your Company</span>
       </Link>
-      <div className={css(styles.banner)}>
-        <h1 className={css(styles.bannerTitle)}>React</h1>
-        <p className={css(styles.bannerDesc)}>Complex web apps made easy</p>
+      <div {...css(styles.banner)}>
+        <h1 {...css(styles.bannerTitle)}>React</h1>
+        <p {...css(styles.bannerDesc)}>Complex web apps made easy</p>
       </div>
     </div>
   </div>
 );
 
-const styles = StyleSheet.create({
+Header.propTypes = {
+  styles: PropTypes.object.isRequired,
+};
+
+export default withStyles(({ color, maxContentWidth }) => ({
   root: {
     background: '#373277',
     color: '#fff',
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
     maxWidth: maxContentWidth,
   },
   brand: {
-    color: Color(brandColor).lighten(0.1).hex(),
+    color: color.primaryLight,
     textDecoration: 'none',
     fontSize: '1.75em', // ~28px
   },
@@ -58,4 +61,4 @@ const styles = StyleSheet.create({
     fontSize: '1.25em',
     margin: 0,
   },
-});
+}))(Header);

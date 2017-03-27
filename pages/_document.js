@@ -10,8 +10,9 @@ class MyDocument extends Document {
   render() {
     return (
       <html lang="en">
-        <Head>
-          <style dangerouslySetInnerHTML={{ __html: this.props.css.content }} />
+        <Head>{
+          // eslint-disable-next-line react/no-danger
+          }<style dangerouslySetInnerHTML={{ __html: this.props.css.content }} />
         </Head>
         <body>
           <Main />

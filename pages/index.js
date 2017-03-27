@@ -1,15 +1,16 @@
 import { Component, PropTypes } from 'react';
-import { StyleSheet, css } from 'aphrodite/no-important';
 import 'isomorphic-fetch';
+import { css, withStyles } from '../lib/withStyles';
 import Layout from '../components/Layout';
 
-export default class IndexPage extends Component {
+class IndexPage extends Component {
   static propTypes = {
     news: PropTypes.arrayOf(PropTypes.shape({
       title: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
       content: PropTypes.string,
     })).isRequired,
+    styles: PropTypes.object.isRequired,
   }
 
   static async getInitialProps() {
@@ -19,20 +20,21 @@ export default class IndexPage extends Component {
   }
 
   render() {
+    const { styles } = this.props;
     return (
       <Layout>
-        <div className={css(styles.root)}>
-          <div className={css(styles.container)}>
+        <div {...css(styles.root)}>
+          <div {...css(styles.container)}>
             <h1>React.js News</h1>
             {this.props.news.map(item => (
-               <article key={item.link} className={css(styles.newsItem)}>
-                 <h1 className={css(styles.newsTitle)}><a href={item.link}>{item.title}</a></h1>
-                 <div
-                     className="newsDesc"
-                     // eslint-disable-next-line react/no-danger
-                     dangerouslySetInnerHTML={{ __html: item.content }}
-                 />
-               </article>
+              <article key={item.link} {...css(styles.newsItem)}>
+                <h1 {...css(styles.newsTitle)}><a href={item.link}>{item.title}</a></h1>
+                <div
+                  className="newsDesc"
+                  // eslint-disable-next-line react/no-danger
+                  dangerouslySetInnerHTML={{ __html: item.content }}
+                />
+              </article>
              ))}
           </div>
         </div>
@@ -41,7 +43,7 @@ export default class IndexPage extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+export default withStyles(({ maxContentWidth }) => ({
   root: {
     paddingLeft: '20px',
     paddingRight: '20px',
@@ -49,6 +51,7 @@ const styles = StyleSheet.create({
   container: {
     margin: '0 auto',
     padding: '0 0 40px',
+    maxWidth: maxContentWidth,
   },
   newsItem: {
     margin: '0 0 2rem',
@@ -56,4 +59,4 @@ const styles = StyleSheet.create({
   newsTitle: {
     fontSize: '1.5rem',
   },
-});
+}))(IndexPage);
