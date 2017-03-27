@@ -1,3 +1,19 @@
 {
-  "presets": ["es2015", "next/babel"]
+  "presets": ["es2015", "next/babel"],
+  "plugins": [
+    [
+      "module-resolver", {
+        "root": ["."],
+        "alias": {
+          "styles": "./styles"
+        },
+        "cwd": "babelrc"
+    }],
+    [
+      "wrap-in-js",
+      {
+        "extensions": ["css$"]
+      }
+    ]
+  ]
 }
