@@ -1,5 +1,5 @@
 import { PropTypes } from 'react';
-import history from '../core/history';
+import history from '../lib/history';
 
 const isLeftClickEvent = event => event.button === 0;
 const isModifiedEvent = event =>
