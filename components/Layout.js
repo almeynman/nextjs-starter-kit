@@ -2,6 +2,7 @@ import { PropTypes } from 'react';
 import Head from 'next/head';
 import { css, withStyles } from '../lib/withStyles';
 import Header from './Header';
+import Feedback from './Feedback';
 import Footer from './Footer';
 import stylesheet from './Layout.css';
 
@@ -16,6 +17,7 @@ const Layout = ({ children, styles, title }) => (
     </Head>
     <Header />
     {children}
+    <Feedback />
     <Footer />
   </div>
 );
