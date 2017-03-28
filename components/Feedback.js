@@ -7,12 +7,16 @@ const Feedback = ({ styles }) => (
       <a
         {...css(styles.link)}
         href="https://gitter.im/nextjs-starter-kit/"
-      >Ask a question</a>
+      >
+        Ask a question
+      </a>
       <span {...css(styles.spacer)}>|</span>
       <a
         {...css(styles.link)}
         href="https://gitter.im/nextjs-starter-kit/"
-      >Report an issue</a>
+      >
+        Report an issue
+      </a>
     </div>
   </div>
 );
