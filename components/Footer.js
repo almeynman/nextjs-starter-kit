@@ -1,5 +1,5 @@
 import { PropTypes } from 'react';
-import { css, withStyles } from '../lib/withStyles.js';
+import { css, withStyles } from '../lib/withStyles';
 import Link from './Link';
 
 const Footer = ({ styles }) => (
