@@ -1,4 +1,5 @@
 --require testSetup.js
+--require ignore-styles
 ./lib/**/*.test.js
 ./pages/**/*.test.js
 ./components/**/*.test.js
