@@ -1,9 +1,11 @@
 import Layout from '../components/Layout';
 import Page from '../components/Page';
-import data from './about.md';
+import html from './about.md';
 
 const About = () => (
   <Layout>
-    <Page {...data} />
+    <Page title="About Us" html={html} />
   </Layout>
 );
+
+export default About;
