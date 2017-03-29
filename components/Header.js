@@ -1,15 +1,17 @@
 import { PropTypes } from 'react';
+import Link from 'next/link';
 import { css, withStyles } from '../lib/withStyles';
-import Link from './Link';
 import Navigation from './Navigation';
 
 const Header = ({ styles }) => (
   <div {...css(styles.root)}>
     <div {...css(styles.container)}>
       <Navigation />
-      <Link {...css(styles.brand)} to="/">
-        <img src="/static/logo-small.png" srcSet="/static/logo-small@2x.png" width="38" height="38" alt="React" />
-        <span {...css(styles.brandTxt)}>Your Company</span>
+      <Link href="/">
+        <a {...css(styles.brand)}>
+          <img src="/static/logo-small.png" srcSet="/static/logo-small@2x.png" width="38" height="38" alt="React" />
+          <span {...css(styles.brandTxt)}>Your Company</span>
+        </a>
       </Link>
       <div {...css(styles.banner)}>
         <h1 {...css(styles.bannerTitle)}>React</h1>

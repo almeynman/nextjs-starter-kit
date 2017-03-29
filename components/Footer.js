@@ -1,19 +1,19 @@
 import { PropTypes } from 'react';
+import Link from 'next/link';
 import { css, withStyles } from '../lib/withStyles';
-import Link from './Link';
 
 const Footer = ({ styles }) => (
   <div {...css(styles.root)}>
     <div {...css(styles.container)}>
       <span {...css(styles.text)}>© Your Company</span>
       <span {...css(styles.spacer)}>.</span>
-      <Link {...css(styles.link)} to="/">Home</Link>
+      <Link href="/"><a {...css(styles.link)}>Home</a></Link>
       <span {...css(styles.spacer)}>.</span>
-      <Link {...css(styles.link)} to="/admin">Admin</Link>
+      <Link href="/admin"><a {...css(styles.link)}>Admin</a></Link>
       <span {...css(styles.spacer)}>.</span>
-      <Link {...css(styles.link)} to="/privacy">Privacy</Link>
+      <Link href="/privacy"><a {...css(styles.link)}>Privacy</a></Link>
       <span {...css(styles.spacer)}>.</span>
-      <Link {...css(styles.link)} to="/not-found">Not Found</Link>
+      <Link href="/not-found"><a {...css(styles.link)}>Not Found</a></Link>
     </div>
   </div>
 );
@@ -44,8 +44,16 @@ export default withStyles(({ maxContentWidth }) => ({
   link: {
     padding: '2px 5px',
     fontSize: '1em',
-    textDecoration: 'none',
     color: 'rgba(255, 255, 255, 0.6)',
+    textDecoration: 'none',
+    ':active': {
+      color: 'rgba(255, 255, 255, 0.6)',
+      textDecoration: 'none',
+    },
+    ':visited': {
+      color: 'rgba(255, 255, 255, 1)',
+      textDecoration: 'none',
+    },
     ':hover': {
       color: 'rgba(255, 255, 255, 1)',
     },

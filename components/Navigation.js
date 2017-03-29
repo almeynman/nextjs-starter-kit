@@ -1,15 +1,15 @@
 import { PropTypes } from 'react';
+import Link from 'next/link';
 import { css, withStyles } from '../lib/withStyles';
-import Link from './Link';
 
 const Navigation = ({ styles }) => (
   <div {...css(styles.root)} role="navigation">
-    <Link {...css(styles.link)} to="/about">About</Link>
-    <Link {...css(styles.link)} to="/contact">Contact</Link>
+    <Link href="/about"><a {...css(styles.link)} >About</a></Link>
+    <Link href="/contact"><a {...css(styles.link)}>Contact</a></Link>
     <span {...css(styles.spacer)}> | </span>
-    <Link {...css(styles.link)} to="/login">Log in</Link>
+    <Link href="/login"><a {...css(styles.link)}>Log in</a></Link>
     <span {...css(styles.spacer)}>or</span>
-    <Link {...css(styles.link, styles.highlight)} to="/register">Sign up</Link>
+    <Link to="/register"><a {...css(styles.link, styles.highlight)}>Sign up</a></Link>
   </div>
 );
 
