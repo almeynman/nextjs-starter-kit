@@ -193,9 +193,6 @@ export default withStyles(() => ({
     fontSize: '18px',
     lineHeight: '1.3333333',
     cursor: 'pointer',
-    ':hover': {
-      background: 'rgba(54, 50, 119, 0.8)',
-    },
     ':focus': {
       borderColor: '#0074c2',
       boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
