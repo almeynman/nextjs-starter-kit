@@ -1,6 +1,7 @@
 import { PropTypes } from 'react';
 import { css, withStyles } from '../lib/withStyles';
 import Layout from '../components/Layout';
+import Button from '../components/Button';
 
 const Login = ({ styles }) => (
   <Layout>
@@ -9,7 +10,7 @@ const Login = ({ styles }) => (
         <h1>Log In</h1>
         <p {...css(styles.lead)}>Log in with your username or company email address</p>
         <div {...css(styles.formGroup)}>
-          <a {...css(styles.facebook)} href="/login/facebook">
+          <Button {...css(styles.facebook)} href="/login/facebook">
             <svg
               {...css(styles.icon)}
               width="30"
@@ -22,10 +23,10 @@ const Login = ({ styles }) => (
               />
             </svg>
             <span>Log in with Facebook</span>
-          </a>
+          </Button>
         </div>
         <div {...css(styles.formGroup)}>
-          <a {...css(styles.google)} href="/login/google">
+          <Button {...css(styles.google)} href="/login/google">
             <svg
               {...css(styles.icon)}
               width="30"
@@ -45,10 +46,10 @@ const Login = ({ styles }) => (
               />
             </svg>
             <span>Log in with Google</span>
-          </a>
+          </Button>
         </div>
         <div {...css(styles.formGroup)}>
-          <a {...css(styles.twitter)} href="/login/twitter">
+          <Button {...css(styles.twitter)} href="/login/twitter">
             <svg
               {...css(styles.icon)}
               width="30"
@@ -68,7 +69,7 @@ const Login = ({ styles }) => (
               />
             </svg>
             <span>Log in with Twitter</span>
-          </a>
+          </Button>
         </div>
         <strong {...css(styles.lineThrough)}>OR</strong>
         <form method="post">
@@ -96,9 +97,9 @@ const Login = ({ styles }) => (
             />
           </div>
           <div {...css(styles.formGroup)}>
-            <button {...css(styles.button)} type="submit">
+            <Button {...css(styles.button)} type="submit">
               Log in
-            </button>
+            </Button>
           </div>
         </form>
       </div>
@@ -179,24 +180,6 @@ export default withStyles(() => ({
   facebook: {
     borderColor: '#3b5998',
     background: '#3b5998',
-    display: 'block',
-    boxSizing: 'border-box',
-    margin: 0,
-    padding: '10px 16px',
-    width: '100%',
-    outline: 0,
-    border: '1px solid #373277',
-    borderRadius: 0,
-    color: '#fff',
-    textAlign: 'center',
-    textDecoration: 'none',
-    fontSize: '18px',
-    lineHeight: '1.3333333',
-    cursor: 'pointer',
-    ':focus': {
-      borderColor: '#0074c2',
-      boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
-    },
     ':hover': {
       background: '#2d4373',
     },
