@@ -2,19 +2,15 @@ import { PropTypes } from 'react';
 import { css, withStyles } from '../lib/withStyles';
 
 const Button = (props) => {
-  const finalProps = {
-    ...props,
-    ...css(props.styles.button),
-  };
   if ('href' in props) {
     return (
-      <a {...finalProps}>
+      <a {...css(props.styles.button, props.style)}>
         {props.children}
       </a>
     );
   }
   return (
-    <button {...finalProps }>
+    <button {...css(props.styles.button, props.style)}>
       {props.children}
     </button>
   );
@@ -22,7 +18,12 @@ const Button = (props) => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  style: PropTypes.object,
   styles: PropTypes.object.isRequired,
+};
+
+Button.defaultProps = {
+  style: {},
 };
 
 export default withStyles(() => ({

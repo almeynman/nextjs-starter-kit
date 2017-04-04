@@ -10,7 +10,7 @@ const Login = ({ styles }) => (
         <h1>Log In</h1>
         <p {...css(styles.lead)}>Log in with your username or company email address</p>
         <div {...css(styles.formGroup)}>
-          <Button {...css(styles.facebook)} href="/login/facebook">
+          <Button style={styles.facebook} href="/login/facebook">
             <svg
               {...css(styles.icon)}
               width="30"
@@ -26,7 +26,7 @@ const Login = ({ styles }) => (
           </Button>
         </div>
         <div {...css(styles.formGroup)}>
-          <Button {...css(styles.google)} href="/login/google">
+          <Button style={styles.google} href="/login/google">
             <svg
               {...css(styles.icon)}
               width="30"
@@ -49,7 +49,7 @@ const Login = ({ styles }) => (
           </Button>
         </div>
         <div {...css(styles.formGroup)}>
-          <Button {...css(styles.twitter)} href="/login/twitter">
+          <Button style={styles.twitter} href="/login/twitter">
             <svg
               {...css(styles.icon)}
               width="30"
@@ -111,166 +111,172 @@ Login.propTypes = {
   styles: PropTypes.object.isRequired,
 };
 
-export default withStyles(() => ({
-  root: {
-    paddingLeft: '20px',
-    paddingRight: '20px',
-  },
-  container: {
-    margin: '0 auto',
-    padding: '0 0 40px',
-    maxWidth: '380px',
-  },
-  lead: {
-    fontSize: '1.25em',
-  },
-  formGroup: {
-    marginBottom: '15px',
-  },
-  label: {
-    display: 'inline-block',
-    marginBottom: '5px',
-    maxWidth: '100%',
-    fontWeight: '700',
-  },
-  input: {
-    display: 'block',
-    boxSizing: 'border-box',
-    padding: '10px 16px',
-    width: '100%',
-    height: '46px',
-    outline: 0,
-    border: '1px solid #ccc',
-    borderRadius: 0,
-    background: '#fff',
-    boxShadow: 'inset 0 1px 1px rgba(0, 0, 0, 0.075)',
-    color: '#616161',
-    fontSize: '18px',
-    lineHeight: '1.3333333',
-    transition: 'border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s',
-    ':focus': {
-      borderColor: '#0074c2',
-      boxShadow: 'inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 116, 194, 0.6)',
+export default withStyles(() => {
+  const button = {
+
+  };
+
+  return {
+    root: {
+      paddingLeft: '20px',
+      paddingRight: '20px',
     },
-  },
-  button: {
-    display: 'block',
-    boxSizing: 'border-box',
-    margin: 0,
-    padding: '10px 16px',
-    width: '100%',
-    outline: 0,
-    border: '1px solid #373277',
-    borderRadius: 0,
-    background: '#373277',
-    color: '#fff',
-    textAlign: 'center',
-    textDecoration: 'none',
-    fontSize: '18px',
-    lineHeight: '1.3333333',
-    cursor: 'pointer',
-    ':hover': {
-      background: 'rgba(54, 50, 119, 0.8)',
+    container: {
+      margin: '0 auto',
+      padding: '0 0 40px',
+      maxWidth: '380px',
     },
-    ':focus': {
-      borderColor: '#0074c2',
-      boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
+    lead: {
+      fontSize: '1.25em',
     },
-  },
-  facebook: {
-    borderColor: '#3b5998',
-    background: '#3b5998',
-    ':hover': {
-      background: '#2d4373',
+    formGroup: {
+      marginBottom: '15px',
     },
-  },
-  google: {
-    display: 'block',
-    boxSizing: 'border-box',
-    margin: 0,
-    padding: '10px 16px',
-    width: '100%',
-    outline: 0,
-    border: '1px solid #373277',
-    borderRadius: 0,
-    color: '#fff',
-    textAlign: 'center',
-    textDecoration: 'none',
-    fontSize: '18px',
-    lineHeight: '1.3333333',
-    cursor: 'pointer',
-    borderColor: '#dd4b39',
-    background: '#dd4b39',
-    ':focus': {
-      borderColor: '#0074c2',
-      boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
+    label: {
+      display: 'inline-block',
+      marginBottom: '5px',
+      maxWidth: '100%',
+      fontWeight: '700',
     },
-    ':hover': {
-      background: '#c23321',
-    },
-  },
-  twitter: {
-    borderColor: '#55acee',
-    background: '#55acee',
-    display: 'block',
-    boxSizing: 'border-box',
-    margin: 0,
-    padding: '10px 16px',
-    width: '100%',
-    outline: 0,
-    border: '1px solid #373277',
-    borderRadius: 0,
-    color: '#fff',
-    textAlign: 'center',
-    textDecoration: 'none',
-    fontSize: '18px',
-    lineHeight: '1.3333333',
-    cursor: 'pointer',
-    ':focus': {
-      borderColor: '#0074c2',
-      boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
-    },
-    ':hover': {
-      background: '#2795e9',
-    },
-  },
-  icon: {
-    display: 'inline-block',
-    margin: '-2px 12px -2px 0',
-    width: '20px',
-    height: '20px',
-    verticalAlign: 'middle',
-    fill: 'currentColor',
-  },
-  lineThrough: {
-    position: 'relative',
-    zIndex: 1,
-    display: 'block',
-    marginBottom: '15px',
-    width: '100%',
-    color: '#757575',
-    textAlign: 'center',
-    fontSize: '80%',
-    ':before': {
-      position: 'absolute',
-      top: '50%',
-      left: '50%',
-      zIndex: -1,
-      marginTop: '-5px',
-      marginLeft: '-20px',
-      width: '40px',
-      height: '10px',
-      backgroundColor: '#fff',
-      content: '',
-    },
-    ':after': {
-      position: 'absolute',
-      top: '49%',
-      zIndex: '-2',
+    input: {
       display: 'block',
+      boxSizing: 'border-box',
+      padding: '10px 16px',
       width: '100%',
-      borderBottom: '1px solid #ddd',
-      content: '',
+      height: '46px',
+      outline: 0,
+      border: '1px solid #ccc',
+      borderRadius: 0,
+      background: '#fff',
+      boxShadow: 'inset 0 1px 1px rgba(0, 0, 0, 0.075)',
+      color: '#616161',
+      fontSize: '18px',
+      lineHeight: '1.3333333',
+      transition: 'border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s',
+      ':focus': {
+        borderColor: '#0074c2',
+        boxShadow: 'inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 116, 194, 0.6)',
+      },
     },
-  },
-}))(Login);
+    button: {
+      display: 'block',
+      boxSizing: 'border-box',
+      margin: 0,
+      padding: '10px 16px',
+      width: '100%',
+      outline: 0,
+      border: '1px solid #373277',
+      borderRadius: 0,
+      background: '#373277',
+      color: '#fff',
+      textAlign: 'center',
+      textDecoration: 'none',
+      fontSize: '18px',
+      lineHeight: '1.3333333',
+      cursor: 'pointer',
+      ':hover': {
+        background: 'rgba(54, 50, 119, 0.8)',
+      },
+      ':focus': {
+        borderColor: '#0074c2',
+        boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
+      },
+    },
+    facebook: {
+      borderColor: '#3b5998',
+      background: '#3b5998',
+      ':hover': {
+        background: '#2d4373',
+      },
+    },
+    google: {
+      display: 'block',
+      boxSizing: 'border-box',
+      margin: 0,
+      padding: '10px 16px',
+      width: '100%',
+      outline: 0,
+      border: '1px solid #373277',
+      borderRadius: 0,
+      color: '#fff',
+      textAlign: 'center',
+      textDecoration: 'none',
+      fontSize: '18px',
+      lineHeight: '1.3333333',
+      cursor: 'pointer',
+      borderColor: '#dd4b39',
+      background: '#dd4b39',
+      ':focus': {
+        borderColor: '#0074c2',
+        boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
+      },
+      ':hover': {
+        background: '#c23321',
+      },
+    },
+    twitter: {
+      borderColor: '#55acee',
+      background: '#55acee',
+      display: 'block',
+      boxSizing: 'border-box',
+      margin: 0,
+      padding: '10px 16px',
+      width: '100%',
+      outline: 0,
+      border: '1px solid #373277',
+      borderRadius: 0,
+      color: '#fff',
+      textAlign: 'center',
+      textDecoration: 'none',
+      fontSize: '18px',
+      lineHeight: '1.3333333',
+      cursor: 'pointer',
+      ':focus': {
+        borderColor: '#0074c2',
+        boxShadow: '0 0 8px rgba(0, 116, 194, 0.6)',
+      },
+      ':hover': {
+        background: '#2795e9',
+      },
+    },
+    icon: {
+      display: 'inline-block',
+      margin: '-2px 12px -2px 0',
+      width: '20px',
+      height: '20px',
+      verticalAlign: 'middle',
+      fill: 'currentColor',
+    },
+    lineThrough: {
+      position: 'relative',
+      zIndex: 1,
+      display: 'block',
+      marginBottom: '15px',
+      width: '100%',
+      color: '#757575',
+      textAlign: 'center',
+      fontSize: '80%',
+      ':before': {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        zIndex: -1,
+        marginTop: '-5px',
+        marginLeft: '-20px',
+        width: '40px',
+        height: '10px',
+        backgroundColor: '#fff',
+        content: '',
+      },
+      ':after': {
+        position: 'absolute',
+        top: '49%',
+        zIndex: '-2',
+        display: 'block',
+        width: '100%',
+        borderBottom: '1px solid #ddd',
+        content: '',
+      },
+    },
+  };
+})(Login);
