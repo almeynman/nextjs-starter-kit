@@ -1,3 +1,4 @@
+import { PropTypes } from 'react';
 import { css, withStyles } from '../lib/withStyles';
 import Layout from '../components/Layout';
 
@@ -11,6 +12,10 @@ const Register = ({ styles }) => (
     </div>
   </Layout>
 );
+
+Register.propTypes = {
+  styles: PropTypes.object.isRequired,
+};
 
 export default withStyles(({ maxContentWidth }) => ({
   root: {
