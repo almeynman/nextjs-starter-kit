@@ -9,7 +9,7 @@ const Navigation = ({ styles }) => (
     <span {...css(styles.spacer)}> | </span>
     <Link href="/login"><a {...css(styles.link)}>Log in</a></Link>
     <span {...css(styles.spacer)}>or</span>
-    <Link to="/register"><a {...css(styles.link, styles.highlight)}>Sign up</a></Link>
+    <Link href="/register"><a {...css(styles.link, styles.highlight)}>Sign up</a></Link>
   </div>
 );
 
