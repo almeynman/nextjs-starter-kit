@@ -1,14 +1,17 @@
-import React from 'react'
-import { gql, graphql } from 'react-apollo'
+import { PropTypes } from 'react';
+import { gql, graphql } from 'react-apollo';
 
-function PostUpvoter ({ upvote, votes, id }) {
-  return (
-    <button onClick={() => upvote(id, votes + 1)}>
-      {votes}
+const PostUpvoter = ({ upvote, votes, id }) => (
+  <button onClick={() => upvote(id, votes + 1)}>
+    {votes}
+  </button>
+);
 
-    </button>
-  )
-}
+PostUpvoter.propTypes = {
+  upvote: PropTypes.func.isRequired,
+  votes: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 const upvotePost = gql`
   mutation updatePost($id: ID!, $votes: Int) {
@@ -17,7 +20,7 @@ const upvotePost = gql`
       votes
     }
   }
-`
+`;
 
 export default graphql(upvotePost, {
   props: ({ ownProps, mutate }) => ({
@@ -26,9 +29,9 @@ export default graphql(upvotePost, {
       optimisticResponse: {
         updatePost: {
           id: ownProps.id,
-          votes: ownProps.votes + 1
-        }
-      }
-    })
-  })
-})(PostUpvoter)
+          votes: ownProps.votes + 1,
+        },
+      },
+    }),
+  }),
+})(PostUpvoter);
