@@ -1,0 +1,15 @@
+{
+  "verbose": true,
+  "ignore": ["*.test.js"],
+  "execMap": {
+    "js": "babel-node"
+  },
+  "events": {
+    "restart": "osascript -e 'display notification \"server restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+  },
+  "watch": ["server/"],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json"
+}

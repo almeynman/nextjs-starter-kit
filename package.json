@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "eslint components lib pages server",
     "test": "NODE_ENV=test mocha --opts .mocharc",
-    "dev": "nodemon server/index.js --exec babel-node --watch server --ignore __tests__",
+    "dev": "nodemon server/index.js --config .nodemonrc",
     "build": "next build && babel lib -d dist",
     "start": "node dist/server.js"
   },
