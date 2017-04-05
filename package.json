@@ -2,9 +2,9 @@
   "name": "web",
   "version": "0.0.0",
   "scripts": {
-    "lint": "eslint components core lib pages",
+    "lint": "eslint components lib pages server",
     "test": "NODE_ENV=test mocha --opts .mocharc",
-    "dev": "nodemon lib/server.js --exec babel-node --watch lib --ignore __tests__",
+    "dev": "nodemon server/index.js --exec babel-node --watch server --ignore __tests__",
     "build": "next build && babel lib -d dist",
     "start": "node dist/server.js"
   },
