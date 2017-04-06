@@ -1,4 +1,4 @@
-# [Next.js](https://github.com/zeit/next.js) Boilerplate
+# [Next.js](https://github.com/zeit/next.js) Starter Kit
 
 Nextjs-starter-kit is a opinionated boilerplate for web development, built on top of Node.js, Express, GraphQL and React, containning modern web development tools such as Webpack, Babel.
 
